@@ -1,24 +1,11 @@
 function showStatistics(selection) {
-  clear();
+  setPointsTo(0);
   const storyPoints = countStoryPoints(selection);
-  getContainer().appendChild(createTotal(storyPoints));
+  setPointsTo(storyPoints);
 }
 
-function clear() {
-  const elements = getContainer().getElementsByClassName('story-point-total')
-  for (let i = 0; i < elements.length; i++) {
-    elements.item(i).remove()
-  }
-}
-
-function getContainer() {
-  return document.getElementById('story-point-total');
-}
-
-function createTotal(storyPoints) {
-  const statView = document.createElement('p');
-  statView.innerHtml = `<span>${storyPoints}</span>`;
-  return statView;
+function setPointsTo(x) {
+  document.getElementById('counter').innerHtml = `${x}`;
 }
 
 function countStoryPoints(selection) {
