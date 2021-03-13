@@ -7,7 +7,7 @@ function showStatistics(selection) {
 }
 
 function setPointsTo(x) {
-  document.getElementById('counter').innerHtml = `${x}`;
+  document.getElementById('story-point-counter').innerHtml = `${x}`;
 }
 
 async function countStoryPoints(selection) {
