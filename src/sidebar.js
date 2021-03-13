@@ -5,9 +5,13 @@ function showStatistics(selection) {
 }
 
 function clear() {
-  const elements = getContainer().getElementsByClassName('story-point-total')
-  for (let i = 0; i < elements.length; i++) {
-    elements.item(i).remove()
+  try {
+    const elements = getContainer().getElementsByClassName('story-point-total')
+    for (let i = 0; i < elements.length; i++) {
+      elements.item(i).remove()
+    }
+  } catch(err) {
+    //nop
   }
 }
 
