@@ -3,7 +3,7 @@ function showStatistics(selection) {
   const storyPoints = countStoryPoints(selection).then((storyPoints) => {
     console.log(`found ${storyPoints} story points in the selected widgets`);
     setPointsTo(storyPoints);
-  };;
+  });
 }
 
 function setPointsTo(x) {
