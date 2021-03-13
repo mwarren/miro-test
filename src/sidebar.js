@@ -16,6 +16,7 @@ function countStoryPoints(selection) {
   console.log(`examining ${selection.length} widgets`);
   var total = 0;
   selection.forEach((item) => {
+    console.log(item);
     if (item.title) {
       let match = re.exec(item.title);
       if (match !== null) {
