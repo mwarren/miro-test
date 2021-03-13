@@ -17,7 +17,7 @@ function countStoryPoints(selection) {
   var total = 0;
   selection.forEach((sel) => {
     console.log(sel);
-    const widget = miro.board.widgets.get({id: sel.id})[0];
+    const widget = miro.board.widgets.get({id: sel.id});
     console.log(widget);
     if (widget.title) {
       let match = re.exec(widget.title);
