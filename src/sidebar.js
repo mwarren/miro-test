@@ -1,12 +1,13 @@
 function showStatistics(selection) {
   setPointsTo(0);
-  const storyPoints = countStoryPoints(selection).then((storyPoints) => {
+  countStoryPoints(selection).then((storyPoints) => {
     console.log(`found ${storyPoints} story points in the selected widgets`);
     setPointsTo(storyPoints);
   });
 }
 
 function setPointsTo(x) {
+  console.log(`story points being set to ${x}`);
   document.getElementById('story-point-counter').innerHtml = `${x}`;
 }
 
