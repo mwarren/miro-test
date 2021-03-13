@@ -11,7 +11,7 @@ function setPointsTo(x) {
 }
 
 function countStoryPoints(selection) {
-  const re = /\((?<points>\d+)\)$/g;
+  const re = /\((?<points>\d+)\)/g;
 
   console.log(`examining ${selection.length} widgets`);
   var total = 0;
