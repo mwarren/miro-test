@@ -17,20 +17,22 @@ function countStoryPoints(selection) {
   var total = 0;
   selection.forEach((sel) => {
     console.log(sel);
-    const widget = miro.board.widgets.get({id: sel.id});
-    console.log(widget);
-    if (widget.title) {
-      let match = re.exec(widget.title);
-      if (match !== null) {
-        total += parseInt(match.groups.points, 10);
+    miro.board.widgets.get({id: sel.id}).then((widgets) => {
+      const widget = widgets[0];
+      console.log(widget);
+      if (widget.title) {
+        let match = re.exec(widget.title);
+        if (match !== null) {
+          total += parseInt(match.groups.points, 10);
+        }
+        else {
+          console.log('regex didnt match the element title');
+        }
       }
       else {
-        console.log('regex didnt match the element title');
+        console.log('element has no title');
       }
-    }
-    else {
-      console.log('element has no title');
-    }
+    });
   });
 
   return total;
