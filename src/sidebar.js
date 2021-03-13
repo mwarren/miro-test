@@ -17,10 +17,10 @@ function countStoryPoints(selection) {
   var total = 0;
   selection.forEach((sel) => {
     console.log(sel);
-    const widget = await miro.board.widgets.get({id: sel.id});
-    console.log(widget[0]);
-    if (widget[0].title) {
-      let match = re.exec(widget[0].title);
+    const widget = miro.board.widgets.get({id: sel.id})[0];
+    console.log(widget);
+    if (widget.title) {
+      let match = re.exec(widget.title);
       if (match !== null) {
         total += parseInt(match.groups.points, 10);
       }
