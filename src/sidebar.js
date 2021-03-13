@@ -5,13 +5,9 @@ function showStatistics(selection) {
 }
 
 function clear() {
-  try {
-    const elements = getContainer().getElementsByClassName('story-point-total')
-    for (let i = 0; i < elements.length; i++) {
-      elements.item(i).remove()
-    }
-  } catch(err) {
-    //nop
+  const elements = getContainer().getElementsByClassName('story-point-total')
+  for (let i = 0; i < elements.length; i++) {
+    elements.item(i).remove()
   }
 }
 
@@ -21,7 +17,6 @@ function getContainer() {
 
 function createTotal(storyPoints) {
   const statView = document.createElement('p');
-  statView.className = 'story-point-total';
   statView.innerHtml = `<span>${storyPoints}</span>`;
   return statView;
 }
