@@ -12,7 +12,7 @@ function clear() {
 }
 
 function getContainer() {
-  return document.getElementById('story-point-table');
+  return document.getElementById('story-point-total');
 }
 
 function createTotal(storyPoints) {
